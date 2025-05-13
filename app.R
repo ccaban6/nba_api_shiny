@@ -4,12 +4,13 @@ library(shiny)
 library(plotly)
 library(htmlwidgets)
 
+# Source the class that loads the data
 source("loaddata.R")
 # Source the CourtPlotter class
 source("CourtPlotter.R")
 
 
-# UI
+# UI for the Filter and Visualization
 ui <- fluidPage(
   tags$style(
     HTML(".sidebar {
@@ -59,7 +60,7 @@ ui <- fluidPage(
 
 
 
-# Server
+# Intialize the Server
 server <- function(input, output, session) {
   if (!exists("nba_php")) {
     initiateTables()
@@ -102,44 +103,6 @@ server <- function(input, output, session) {
     return (basketball_court_plot)
   })
 }
-
-  
-
-#  
-#  hover_event <- reactive({
-#    event_data(event = "plotly_hover", source = "hoverplotsource")
-#  })
-#  
-#  unhover_event <- reactive({
-#    event_data(event = "plotly_unhover", source = "hoverplotsource")
-#  })
-#  
-#  hoverplotlyProxy <- plotlyProxy("hoverplot", session)
-#  
-#  observeEvent(hover_event(), {
-#    # Get the coordinates of the hovered point
-#    x_hover <- hover_event()$x
-#    y_hover <- hover_event()$y
-#    z_hover <- hover_event()$z  # Assuming you have the z-coordinate of the hovered point
-#    
-#    # Get the coordinates of the rim
-#    rim_x <- rim_center_x  # Replace with actual x-coordinate of the rim
-#    rim_y <- rim_center_y  # Replace with actual y-coordinate of the rim
-#    rim_z <- rim_center_z  # Replace with actual z-coordinate of the rim
-#    
-#    # Create data frame for the line trace
-#    line_data <- data.frame(
-#      x = c(x_hover, rim_x),
-#      y = c(y_hover, rim_y),
-#      z = c(z_hover, rim_z)
-#    )
-#    
-#    # Add the line trace to the plot
-#    hoverplotlyProxy %>%
-#      plotlyProxyInvoke("addTraces", list(line_data))
-#  })
-
-
 
 # Run the application
 shinyApp(ui = ui, server = server)
