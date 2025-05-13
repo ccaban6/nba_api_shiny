@@ -7,3 +7,8 @@ for his unprecedented blend of skills for his towering height of 7'3".
 The main objective of this project was to explore what R has to offer and the process of making an R Shiny application. This project was a feat of exploration, curiosity, and a desire to create a project about something that I'm interested in and implement tools that I want to use to further my learning. Additionally, I was able to find that this project can be hosted for free and can be viewed by clicking the link below. 
 
 # [Link to Dashboard](https://ccaban.shinyapps.io/nba_api_shiny/)
+![nba_dashboard_preview](https://github.com/user-attachments/assets/2a91263f-5865-4b2a-b68f-97a71797c43b)
+
+![newplot](https://github.com/user-attachments/assets/a16fae4e-75b6-43bd-9c74-65d073ecba59)
+
+![newplot (1)](https://github.com/user-attachments/assets/1ddc05c7-39d5-4adc-9c5f-44a86ef649b1)
